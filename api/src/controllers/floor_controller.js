@@ -8,7 +8,7 @@ class floorController{
                 'INSERT INTO floor(name) VALUES ($1) RETURNING *', 
                 [name]
             );
-            res.json({ message: 'Этаж добавлен в базу данных', address: newFloor.rows[0] });
+            res.json({ message: 'Этаж добавлен в базу данных', floor: newFloor.rows[0] });
         } catch (error) {
             res.status(500).json({ message: 'Ошибка при добавлении адреса', error: error.message });
         }
